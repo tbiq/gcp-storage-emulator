@@ -350,6 +350,9 @@ class Router(object):
                 "Method not implemented: {} - {}".format(request.method, request.path)
             )
             response.status = HTTPStatus.NOT_IMPLEMENTED
+            
+        if method == "GET": 
+            response['Access-Control-Allow-Origin'] = "*"
 
         response.close()
 
